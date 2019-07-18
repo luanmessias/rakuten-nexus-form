@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAQ,0HAAkH,CAClH,sEAA8D,CCDtE,2CAA6C,CACzC,KAAK,CAAE,IAAI,CACX,eAAe,CAAE,IAAI,CACrB,gBAAgB,CAAE,OAAO,CAG7B,IAAI,CACA,UAAU,CAAE,IAAI,CAGpB,YAAY,CACR,UAAU,CAAE,IAAI",
+"sources": ["../../../deploy/sass/1_settings/_fonts.scss","../../../deploy/sass/6_components/_bootstrap_alt.scss"],
+"names": [],
+"file": "style.css"
+}
