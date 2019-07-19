@@ -1,72 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Catálogo de Produtos</title>
-
     <!-- Styles -->
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap-select.css">
     <link rel="stylesheet" href="dist/project/css/style.css">
 </head>
+
 <body class="bg-light">
-
-
-
     <div class="container">
-        
         <h3 class="my-3">Catálogo de Produtos</h3>
-
         <form class="needs-validation" novalidate>
             <div class="row">
-                
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="form-group">
-                        <label for="catActList">Ações</label>
-                        <select class="form-control" name="catActList" id="catActList" required>
-                            <option value="" selected>Selecione uma opção</option>
-                            <option value="Ativar Produtos">Ativar Produtos</option>
-                            <option value="Pausar Produtos">Pausar Produtos</option>
-                            <option value="Atualizar Preço/Estoque">Atualizar Preço/Estoque</option>
-                            <option value="Sincronizar">Sincronizar</option>
-                            <option value="Associar Produto">Associar Produto</option>
-                            <option value="Desassociar Produtos">Desassociar Produtos</option>
-                            <option value="Recriar Produto">Recriar Produto</option>
+                        <label>Ações</label>
+                        <select class="form-control custom-select" required>
+                            <option selected>Selecione uma opção</option>
+                            <option>Ativar Produtos</option>
+                            <option>Pausar Produtos</option>
+                            <option>Atualizar Preço/Estoque</option>
+                            <option>Sincronizar</option>
+                            <option>Associar Produto</option>
+                            <option>Desassociar Produtos</option>
+                            <option>Recriar Produto</option>
                         </select>
                         <div class="invalid-feedback"> Selecione uma opção </div>
                     </div>
                 </div>
-
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="form-group">
-                        <label for="catAccount">Conta</label>
+                        <label>Conta</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="catAccount" name="catAccount" placeholder="" value="" required>
+                            <input type="text" class="form-control" required>
                             <span class="input-group-btn">
-                                <button type="submit" class="btn btn-info ml-3"> <i class="fa fa-search"></i> Executar  </button>
+                                <button class="btn btn-info ml-3"> <i class="fa fa-search"></i> Executar</button>
                             </span>
                             <div class="invalid-feedback"> Campo obrigatório. </div>
                         </div>
-                        
                     </div>
                 </div>
-
             </div>
-
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="form-group">
                         <div class="input-group">
-                            <select class="form-control" name="catActList" id="catActList" required>
-                                <option value="" selected>Selecione uma opção</option>
-                                <option value="Ativar Produtos">Ativar Produtos</option>
-                                <option value="Pausar Produtos">Pausar Produtos</option>
-                                <option value="Atualizar Preço/Estoque">Atualizar Preço/Estoque</option>
-                                <option value="Sincronizar">Sincronizar</option>
-                                <option value="Associar Produto">Associar Produto</option>
-                                <option value="Desassociar Produtos">Desassociar Produtos</option>
-                                <option value="Recriar Produto">Recriar Produto</option>
+                            <select class="form-control custom-select" required>
+                                <option selected>Selecione uma opção</option>
+                                <option>Selecionar visiveis</option>
+                                <option>Selecionar Todos</option>
+                                <option>Deselecionar visiveis</option>
+                                <option>Deselecionar Todos</option>
                             </select>
                             <div class="input-group-append">
                                 <span class="input-group-text">( <strong>5</strong>) Selecionados</span>
@@ -75,30 +64,485 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="d-flex flex-row-reverse col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8">
-                    <button class="btn btn-info"> <i class="fa fa-filter"></i> Filtrar</button>
+                    <button class="btn btn-info"> <i class="fa fa-filter"></i> Filtros</button>
                 </div>
             </div>
-
-            <div class="row">
-                <hr class="mb-4">
-                <div class="d-flex flex-row-reverse col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8">
-                        <button class="btn btn-info"> <i class="fa fa-filter"></i> Filtrar</button>
+            <div class="row row-filter py-4">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label for="catProd">Produto</label>
+                        <input type="text" class="form-control" placeholder="Digite o nome ou código" required>
+                        <div class="invalid-feedback"> Campo obrigatório. </div>
                     </div>
-                <hr class="mb-4">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label>Conta</label>
+                        <select class="selectpicker" multiple data-live-search="true">
+                            <option>Conta 1</option>
+                            <option>Conta 2</option>
+                            <option>Conta 3</option>
+                            <option> Exibir produtos sem vinculo </option>
+                        </select>
+                        <div class="invalid-feedback"> Campo obrigatório. </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <label>Preço</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">De:</span>
+                            </div>
+                            <input type="text" class="form-control" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text">Por:</span>
+                            </div>
+                            <input type="text" class="form-control" required>
+                            <div class="invalid-feedback"> Campo obrigatório. </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control custom-select" required>
+                            <option selected>Selecione uma opção</option>
+                            <option>Ativo</option>
+                            <option>Inativo</option>
+                        </select>
+                        <div class="invalid-feedback"> Selecione uma opção </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <label>Estoque</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">De:</span>
+                            </div>
+                            <input type="text" class="form-control" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text">Até:</span>
+                            </div>
+                            <input type="text" class="form-control" required>
+                            <div class="invalid-feedback"> Campo obrigatório. </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label for="catFilterStatus">Categoria</label>
+                        <select class="form-control custom-select" required>
+                            <option value="" selected>Selecione uma opção</option>
+                            <option value="">Categoria 1</option>
+                            <option value="">Categoria 2</option>
+                        </select>
+                        <div class="invalid-feedback"> Selecione uma opção </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row-reverse col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <button class="btn btn-info"> Aplicar Filtro</button>
+                </div>
             </div>
-
+            <div class="row row-filter py-4">
+                <div class="d-flex align-items-center col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-10">
+                    <span class="badge badge-secondary badge-filter"> <a href="#"><i class="fa fa-times"></i></a> Filtro exemplo</span> 
+                    <span class="badge badge-secondary badge-filter"> <a href="#"><i class="fa fa-times"></i></a> Filtro exemplo</span>  
+                    <span class="badge badge-secondary badge-filter"> <a href="#"><i class="fa fa-times"></i></a> Filtro exemplo</span>   
+                    <span class="badge badge-secondary badge-filter"> <a href="#"><i class="fa fa-times"></i></a> Filtro exemplo</span>  
+                    <span class="badge badge-secondary badge-filter"> <a href="#"><i class="fa fa-times"></i></a> Filtro exemplo</span>  
+                    <span class="badge badge-secondary badge-filter"> <a href="#"><i class="fa fa-times"></i></a> Filtro exemplo</span>  
+                    <span class="badge badge-secondary badge-filter"> <a href="#"><i class="fa fa-times"></i></a> Filtro exemplo</span>  
+                    
+                </div>
+                <div class="d-flex justify-content-end col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-2"> 
+                    <button class="btn btn-danger ml-3"> Limpar filtro</button>
+                </div>
+            </div>
         </form>
-
+        <table class="table table-hover table-resp">
+            <thead>
+                <tr>
+                    <th scope="col">Selecione</th>
+                    <th scope="col">Imagem</th>
+                    <th scope="col">Conta</th>
+                    <th scope="col"></th>
+                    <th scope="col">Nome Produto</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-tr="Selecione">
+                        <div class="form-check d-flex">
+                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                        </div>
+                    </td>
+                    <td data-tr="Imagem">
+                        <img src="https://via.placeholder.com/100" class="img-fluid img-thumbnail img-table">
+                    </td>
+                    <td data-tr="Conta" colspan="2">
+                        <span class="badge badge-primary">B2W - Teste</span>
+                        <span class="badge badge-secondary">CNova</span>
+                        <span class="badge badge-warning">Magazine Luiza</span>
+                    </td>
+                    <td data-tr="Nome Produto"> Sandália de Couro Masculina Loja de teste do Nexus </td>
+                    <td data-tr="Código"> PH5468862 </td>
+                    <td class="nowrap" data-tr="Estoque"> 120 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Preço"> R$ 135,00 <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td class="nowrap" data-tr="Status"> Ativo <span data-toggle="tooltip" data-html="true"
+                            title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                            <i data-toggle="modal" data-target="#myModal" class="fas fa-info-circle text-dark"></i>
+                        </span>
+                    </td>
+                    <td data-tr="Ações">
+                        <a class="" href="#"><i class="far fa-eye text-dark"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div
+                class="d-flex align-content-center justify-content-center col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                Mostrando página 1 de 230 (total de 1,387 registros) </div>
+            <div
+                class="d-flex align-content-center justify-content-center col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link text-dark" href="#">Primeira</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#"><i
+                                    class="fas fa-caret-left"></i></a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#"><i
+                                    class="fas fa-caret-right"></i></a>
+                        </li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">Última</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
-
-    
-
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body"> Modal body.. </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Scripts -->
     <script src="dist/project/js/jquery-3.3.1.slim.min.js"></script>
     <script src="dist/project/js/popper.min.js"></script>
     <script src="dist/bootstrap/js/bootstrap.js"></script>
+    <script src="dist/bootstrap/js/bootstrap-select.min.js"></script>
     <script src="dist/project/js/project.js"></script>
 </body>
+
 </html>

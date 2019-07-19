@@ -1,0 +1,95 @@
+.row-filter{
+    background-color: #FFF;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.img-table{
+    max-width: 100px;
+    height: auto;
+}
+
+
+
+
+.table-resp{
+  
+    @include res-max(800px) {
+        thead {
+            position: absolute;
+            z-index: 0;
+            visibility: hidden;
+            display: none;
+        }
+
+        tbody {
+            @include flexbox(row, wrap, space-between, flex-start, flex-start);
+            @include box-sizing;
+        }
+
+        tr {
+            box-sizing: border-box;
+            display: block;
+            background-color: #FFF;
+            border: 1px solid #CCC;
+            margin: 10px;
+        }
+
+        td {
+            @include flexbox(row, wrap, flex-end, flex-start, flex-end);
+            padding: 15px;
+            font-size: 12px;
+            width: 100%;
+            text-align: right;
+        }
+
+        td:before {
+            content: attr(data-tr);
+            padding-right: 15px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+            margin-right: auto;
+        }
+    }
+
+    @include res-max(300px) {
+        tr{
+            width: 100%;
+        }
+    }
+
+    @include res-between(301px, 400px) {
+        tr{
+            width: 100%;
+        }
+    }
+
+    @include res-between(401px, 500px) {
+        tr{
+            width: calc(100% / 2 - 20px);
+        }
+    }
+
+    @include res-between(501px, 600px) {
+        tr{
+            width: calc(100% / 2 - 20px);
+        }
+    }
+    @include res-between(601px, 700px) {
+        tr{
+            width: calc(100% / 2 - 20px);
+        }
+    }
+    @include res-between(701px, 800px) {
+        tr{
+            width: calc(100% / 2 - 20px);
+        }
+    }
+    @include res-between(801px, 900px) {}
+    @include res-between(901px, 1000px) {}
+    @include res-min(1001px) {}
+
+
+
+}
